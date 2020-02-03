@@ -9,38 +9,53 @@ class BasicoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Image(
+                image: NetworkImage('https://cdn.pixabay.com/photo/2012/08/27/14/19/evening-55067__340.png'),
+                fit: BoxFit.cover,
+                height: 250.0,
+              ),
+            ),
+            _createTitle(),
+            _createActions(),
+            SizedBox(height: 20.0,),
+            _createText(),
+            _createText(),
+            _createText(),
+            _createText(),
+            _createText(),
+          ],
+        ),
+      )
+    );
+  }
+
+  Widget _createTitle(){
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+      child: Row(
         children: <Widget>[
-          Image(
-            image: NetworkImage('https://cdn.pixabay.com/photo/2012/08/27/14/19/evening-55067__340.png'),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-            child: Row(
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text('Parrafo del texto 1', style: styleTitle),
-                      Text('Parrafo del texto 2', style: styleSubtitle),
-                    ],
-                  ),
-                ),
-                Icon( 
-                  Icons.star,
-                  size: 20.0,
-                  color: Colors.red
-                ),
-                Text('41', style: TextStyle(fontSize: 20.0),)
+                Text('Parrafo del texto 1', style: styleTitle),
+                Text('Parrafo del texto 2', style: styleSubtitle),
               ],
             ),
           ),
-          _createActions(),
-          _createText(),
-
+          Icon( 
+            Icons.star,
+            size: 20.0,
+            color: Colors.red
+          ),
+          Text('41', style: TextStyle(fontSize: 20.0),)
         ],
-      )
+      ),
     );
   }
 
@@ -85,7 +100,7 @@ class BasicoPage extends StatelessWidget {
 
   Widget _createText(){
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
       child: Text(
         'Do pariatur ullamco et ipsum anim incididunt dolore dolore. Est amet magna consequat irure reprehenderit magna consectetur aute voluptate officia elit. Irure consectetur tempor sunt labore culpa cillum do ullamco. Laborum aliquip consectetur Lorem non laboris. Ad consectetur irure voluptate nisi elit tempor ullamco non. Sit esse voluptate do duis non ut aliquip in irure consectetur.',
         textAlign: TextAlign.justify,
