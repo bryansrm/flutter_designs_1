@@ -1,14 +1,28 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class BotonesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    // SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle.light.copyWith(
+    //   statusBarColor: Colors.transparent,
+    // ));
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
           _fondoApp(),
+
+          SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                _titulos(),
+              ],
+            )
+          ),
         ],
       )
     );
@@ -58,6 +72,35 @@ class BotonesPage extends StatelessWidget {
           child: cajaRosa
         )
       ],
+    );
+
+  }
+
+  Widget _titulos(){
+
+    final styleTitle = TextStyle(
+      color: Colors.white,
+      fontSize: 30.0,
+      fontWeight: FontWeight.bold
+    );
+
+    final styleSubtitle = TextStyle(
+      color: Colors.white,
+      fontSize: 20.0,
+    );
+
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('Classify transaction', style: styleTitle),
+            SizedBox(height: 10.0),
+            Text('Classify this transaction into a particular category', style: styleSubtitle),
+          ],
+        ),
+      ),
     );
 
   }
