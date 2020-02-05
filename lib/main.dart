@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Basico Page',
-      initialRoute: 'scroll',
+      initialRoute: 'bootones',
       routes: getAplicationsRoutes(),
     );
   }
