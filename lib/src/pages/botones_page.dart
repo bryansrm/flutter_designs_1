@@ -24,7 +24,24 @@ class BotonesPage extends StatelessWidget {
             )
           ),
         ],
-      )
+      ),
+      bottomNavigationBar: _bottomNavigationBar(context),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon( Icons.calendar_today ),
+      //       title: Container()
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon( Icons.pie_chart_outlined ),
+      //       title: Container()
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon( Icons.supervised_user_circle ),
+      //       title: Container()
+      //     ),
+      //   ],
+      // ),
     );
   }
 
@@ -105,5 +122,34 @@ class BotonesPage extends StatelessWidget {
 
   }
 
+  Widget _bottomNavigationBar(BuildContext context){
+
+    return Theme(
+      data: Theme.of(context).copyWith(
+        canvasColor: Color.fromRGBO(55, 57, 84, 1.0),
+        primaryColor: Colors.pinkAccent,
+        textTheme: Theme.of(context).textTheme.copyWith(
+          caption: TextStyle( color: Color.fromRGBO(116, 117, 152, 1.0) )
+        )
+      ), 
+      child: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon( Icons.calendar_today ), 
+            title: Container()
+          ),
+          BottomNavigationBarItem(
+            icon: Icon( Icons.pie_chart_outlined ),
+            title: Container()
+          ),
+          BottomNavigationBarItem(
+            icon: Icon( Icons.supervised_user_circle ),
+            title: Container()
+          ),
+        ]
+      )
+    );
+
+  }
 
 }
